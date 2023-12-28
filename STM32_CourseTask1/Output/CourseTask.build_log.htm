@@ -1,0 +1,1390 @@
+<html>
+<body>
+<pre>
+<h1>�Vision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: ��Vision V5.31.0.0
+Copyright (C) 2020 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 1111 LENOVO, 1111, LIC=65ISZ-JKTBI-CXQU6-DWNYR-INF0M-4UA9S
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.31.0.0
+Toolchain Path:  D:\Professional Software\Keil\MDK ARM\ARM\ARMCLANG\Bin
+C Compiler:      ArmClang.exe V6.14
+Assembler:       Armasm.exe V6.14
+Linker/Locator:  ArmLink.exe V6.14
+Library Manager: ArmAr.exe V6.14
+Hex Converter:   FromElf.exe V6.14
+CPU DLL:         SARMCM3.DLL V5.31.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      UL2CM3.DLL V1.163.4.0
+Dialog DLL:      TCM.DLL V1.46.0.0
+ 
+<h2>Project:</h2>
+D:\Lenovo\Desktop\CourseTask\Project\CourseTask.uvprojx
+Project File Date:  12/28/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V6.14', folder: 'D:\Professional Software\Keil\MDK ARM\ARM\ARMCLANG\Bin'
+Build target 'Target 1'
+../User/system/sys.c(33): error: expected '(' after 'asm'
+__asm void MSR_MSP(u32 addr) 
+      ^
+../User/system/sys.c(33): error: expected ';' after top-level asm block
+__asm void MSR_MSP(u32 addr) 
+     ^
+     ;
+../User/system/sys.c(35): error: use of undeclared identifier 'MSR'
+    MSR MSP, r0                         //set Main Stack value
+    ^
+../User/system/sys.c(33): warning: unused parameter 'addr' [-Wunused-parameter]
+__asm void MSR_MSP(u32 addr) 
+                       ^
+1 warning and 3 errors generated.
+compiling sys.c...
+../User/delay/delay.c(123): warning: implicit declaration of function 'SysTick_CLKSourceConfig' is invalid in C99 [-Wimplicit-function-declaration]
+        SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK_Div8);   //ѡ<D4><F1><CD>ⲿʱ<D6><D3>  HCLK/8
+        ^
+../User/delay/delay.c(123): error: use of undeclared identifier 'SysTick_CLKSource_HCLK_Div8'; did you mean 'SysTick_CLKSourceConfig'?
+        SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK_Div8);   //ѡ<D4><F1><CD>ⲿʱ<D6><D3>  HCLK/8
+                                ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                SysTick_CLKSourceConfig
+../User/delay/delay.c(123): note: 'SysTick_CLKSourceConfig' declared here
+        SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK_Div8);   //ѡ<D4><F1><CD>ⲿʱ<D6><D3>  HCLK/8
+        ^
+../User/delay/delay.c(124): warning: implicit conversion loses integer precision: 'unsigned int' to 'u8' (aka 'unsigned char') [-Wimplicit-int-conversion]
+        fac_us=SystemCoreClock/8000000;                         //Ϊϵͳʱ<D6>ӵ<C4>1/8  
+              ~~~~~~~~~~~~~~~~^~~~~~~~
+2 warnings and 1 error generated.
+compiling delay.c...
+../User/system/usart.c(28): error: '#pragma import' is an ARM Compiler 5 extension, and is not supported by ARM Compiler 6 [-Warmcc-pragma-import]
+#pragma import(__use_no_semihosting)             
+        ^
+../User/system/usart.c(30): error: redefinition of '__FILE'
+struct __FILE 
+       ^
+D:\Professional Software\Keil\MDK ARM\ARM\ARMCLANG\Bin\..\include\stdio.h(119): note: previous definition is here
+struct __FILE {
+       ^
+../User/system/usart.c(40): warning: explicitly assigning value of variable of type 'int' to itself [-Wself-assign]
+        x = x; 
+        ~ ^ ~
+../User/system/usart.c(38): warning: no previous prototype for function '_sys_exit' [-Wmissing-prototypes]
+void _sys_exit(int x) 
+     ^
+../User/system/usart.c(38): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void _sys_exit(int x) 
+^
+static 
+../User/system/usart.c(45): warning: while loop has empty body [-Wempty-body]
+        while((USART1->SR&0X40)==0);//ѭ<BB><B7><B7><A2><CB><CD>,ֱ<B5><BD><B7><A2><CB><CD><CD><EA><B1><CF>   
+                                   ^
+../User/system/usart.c(45): note: put the semicolon on a separate line to silence this warning
+../User/system/usart.c(43): warning: unused parameter 'f' [-Wunused-parameter]
+int fputc(int ch, FILE *f)
+                        ^
+../User/system/usart.c(81): error: unknown type name 'GPIO_InitTypeDef'; did you mean 'GPIO_TypeDef'?
+  GPIO_InitTypeDef GPIO_InitStructure;
+  ^~~~~~~~~~~~~~~~
+  GPIO_TypeDef
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1018): note: 'GPIO_TypeDef' declared here
+} GPIO_TypeDef;
+  ^
+../User/system/usart.c(82): error: unknown type name 'USART_InitTypeDef'; did you mean 'USART_TypeDef'?
+        USART_InitTypeDef USART_InitStructure;
+        ^~~~~~~~~~~~~~~~~
+        USART_TypeDef
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(1258): note: 'USART_TypeDef' declared here
+} USART_TypeDef;
+  ^
+../User/system/usart.c(83): error: use of undeclared identifier 'NVIC_InitTypeDef'
+        NVIC_InitTypeDef NVIC_InitStructure;
+        ^
+../User/system/usart.c(85): warning: implicit declaration of function 'RCC_APB2PeriphClockCmd' is invalid in C99 [-Wimplicit-function-declaration]
+        RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1|RCC_APB2Periph_GPIOA, ENABLE);     //ʹ<C4><DC>USART1<A3><AC>GPIOAʱ<D6><D3>
+        ^
+../User/system/usart.c(85): error: use of undeclared identifier 'RCC_APB2Periph_USART1'
+        RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1|RCC_APB2Periph_GPIOA, ENABLE);     //ʹ<C4><DC>USART1<A3><AC>GPIOAʱ<D6><D3>
+                               ^
+../User/system/usart.c(85): error: use of undeclared identifier 'RCC_APB2Periph_GPIOA'
+        RCC_APB2PeriphClockCmd(RCC_APB2Periph_USART1|RCC_APB2Periph_GPIOA, ENABLE);     //ʹ<C4><DC>USART1<A3><AC>GPIOAʱ<D6><D3>
+                                                     ^
+../User/system/usart.c(88): error: no member named 'GPIO_Pin' in 'GPIO_TypeDef'
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9; //PA.9
+  ~~~~~~~~~~~~~~~~~~ ^
+../User/system/usart.c(88): error: use of undeclared identifier 'GPIO_Pin_9'
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_9; //PA.9
+                                ^
+../User/system/usart.c(89): error: no member named 'GPIO_Speed' in 'GPIO_TypeDef'
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+  ~~~~~~~~~~~~~~~~~~ ^
+../User/system/usart.c(89): error: use of undeclared identifier 'GPIO_Speed_50MHz'
+  GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+                                  ^
+../User/system/usart.c(90): error: no member named 'GPIO_Mode' in 'GPIO_TypeDef'
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;       //<B8><B4><D3><C3><CD><C6><CD><EC><CA><E4><B3><F6>
+  ~~~~~~~~~~~~~~~~~~ ^
+../User/system/usart.c(90): error: use of undeclared identifier 'GPIO_Mode_AF_PP'
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;       //<B8><B4><D3><C3><CD><C6><CD><EC><CA><E4><B3><F6>
+                                 ^
+../User/system/usart.c(91): warning: implicit declaration of function 'GPIO_Init' is invalid in C99 [-Wimplicit-function-declaration]
+  GPIO_Init(GPIOA, &GPIO_InitStructure);//<B3><F5>ʼ<BB><AF>GPIOA.9
+  ^
+../User/system/usart.c(94): error: no member named 'GPIO_Pin' in 'GPIO_TypeDef'
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;//PA10
+  ~~~~~~~~~~~~~~~~~~ ^
+../User/system/usart.c(94): error: use of undeclared identifier 'GPIO_Pin_10'
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_10;//PA10
+                                ^
+../User/system/usart.c(95): error: no member named 'GPIO_Mode' in 'GPIO_TypeDef'
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;//<B8><A1><BF><D5><CA><E4><C8><EB>
+  ~~~~~~~~~~~~~~~~~~ ^
+../User/system/usart.c(95): error: use of undeclared identifier 'GPIO_Mode_IN_FLOATING'
+  GPIO_InitStructure.GPIO_Mode = GPIO_Mode_IN_FLOATING;//<B8><A1><BF><D5><CA><E4><C8><EB>
+                                 ^
+../User/system/usart.c(99): error: use of undeclared identifier 'NVIC_InitStructure'; did you mean 'GPIO_InitStructure'?
+  NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;
+  ^~~~~~~~~~~~~~~~~~
+  GPIO_InitStructure
+../User/system/usart.c(81): note: 'GPIO_InitStructure' declared here
+  GPIO_InitTypeDef GPIO_InitStructure;
+                   ^
+../User/system/usart.c(99): error: no member named 'NVIC_IRQChannel' in 'GPIO_TypeDef'
+  NVIC_InitStructure.NVIC_IRQChannel = USART1_IRQn;
+  ~~~~~~~~~~~~~~~~~~ ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+6 warnings and 20 errors generated.
+compiling usart.c...
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(68): warning: '__CM3_REV' macro redefined [-Wmacro-redefined]
+#define __CM3_REV                  0x0200U  /*!< Core Revision r2p0                           */
+        ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(167): note: previous definition is here
+#define __CM3_REV                 0x0200  /*!< Core Revision r2p0                           */
+        ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(69): warning: '__MPU_PRESENT' macro redefined [-Wmacro-redefined]
+ #define __MPU_PRESENT             0U       /*!< Other STM32 devices does not provide an MPU  */
+         ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(165): note: previous definition is here
+ #define __MPU_PRESENT             0      /*!< Other STM32 devices does not provide an MPU  */
+         ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(70): warning: '__NVIC_PRIO_BITS' macro redefined [-Wmacro-redefined]
+#define __NVIC_PRIO_BITS           4U       /*!< STM32 uses 4 Bits for the Priority Levels    */
+        ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(168): note: previous definition is here
+#define __NVIC_PRIO_BITS          4       /*!< STM32 uses 4 Bits for the Priority Levels    */
+        ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(71): warning: '__Vendor_SysTickConfig' macro redefined [-Wmacro-redefined]
+#define __Vendor_SysTickConfig     0U       /*!< Set to 1 if different SysTick Config is used */
+        ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(169): note: previous definition is here
+#define __Vendor_SysTickConfig    0       /*!< Set to 1 if different SysTick Config is used */
+        ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(90): warning: declaration shadows a variable in the global scope [-Wshadow]
+  NonMaskableInt_IRQn         = -14,    /*!< 2 Non Maskable Interrupt                             */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(178): note: previous declaration is here
+  NonMaskableInt_IRQn         = -14,    /*!< 2 Non Maskable Interrupt                             */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(90): error: redefinition of enumerator 'NonMaskableInt_IRQn'
+  NonMaskableInt_IRQn         = -14,    /*!< 2 Non Maskable Interrupt                             */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(178): note: previous definition is here
+  NonMaskableInt_IRQn         = -14,    /*!< 2 Non Maskable Interrupt                             */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(92): warning: declaration shadows a variable in the global scope [-Wshadow]
+  MemoryManagement_IRQn       = -12,    /*!< 4 Cortex-M3 Memory Management Interrupt              */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(179): note: previous declaration is here
+  MemoryManagement_IRQn       = -12,    /*!< 4 Cortex-M3 Memory Management Interrupt              */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(92): error: redefinition of enumerator 'MemoryManagement_IRQn'
+  MemoryManagement_IRQn       = -12,    /*!< 4 Cortex-M3 Memory Management Interrupt              */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(179): note: previous definition is here
+  MemoryManagement_IRQn       = -12,    /*!< 4 Cortex-M3 Memory Management Interrupt              */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(93): warning: declaration shadows a variable in the global scope [-Wshadow]
+  BusFault_IRQn               = -11,    /*!< 5 Cortex-M3 Bus Fault Interrupt                      */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(180): note: previous declaration is here
+  BusFault_IRQn               = -11,    /*!< 5 Cortex-M3 Bus Fault Interrupt                      */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(93): error: redefinition of enumerator 'BusFault_IRQn'
+  BusFault_IRQn               = -11,    /*!< 5 Cortex-M3 Bus Fault Interrupt                      */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(180): note: previous definition is here
+  BusFault_IRQn               = -11,    /*!< 5 Cortex-M3 Bus Fault Interrupt                      */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(94): warning: declaration shadows a variable in the global scope [-Wshadow]
+  UsageFault_IRQn             = -10,    /*!< 6 Cortex-M3 Usage Fault Interrupt                    */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(181): note: previous declaration is here
+  UsageFault_IRQn             = -10,    /*!< 6 Cortex-M3 Usage Fault Interrupt                    */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(94): error: redefinition of enumerator 'UsageFault_IRQn'
+  UsageFault_IRQn             = -10,    /*!< 6 Cortex-M3 Usage Fault Interrupt                    */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(181): note: previous definition is here
+  UsageFault_IRQn             = -10,    /*!< 6 Cortex-M3 Usage Fault Interrupt                    */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(95): warning: declaration shadows a variable in the global scope [-Wshadow]
+  SVCall_IRQn                 = -5,     /*!< 11 Cortex-M3 SV Call Interrupt                       */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(182): note: previous declaration is here
+  SVCall_IRQn                 = -5,     /*!< 11 Cortex-M3 SV Call Interrupt                       */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(95): error: redefinition of enumerator 'SVCall_IRQn'
+  SVCall_IRQn                 = -5,     /*!< 11 Cortex-M3 SV Call Interrupt                       */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(182): note: previous definition is here
+  SVCall_IRQn                 = -5,     /*!< 11 Cortex-M3 SV Call Interrupt                       */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(96): warning: declaration shadows a variable in the global scope [-Wshadow]
+  DebugMonitor_IRQn           = -4,     /*!< 12 Cortex-M3 Debug Monitor Interrupt                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(183): note: previous declaration is here
+  DebugMonitor_IRQn           = -4,     /*!< 12 Cortex-M3 Debug Monitor Interrupt                 */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(96): error: redefinition of enumerator 'DebugMonitor_IRQn'
+  DebugMonitor_IRQn           = -4,     /*!< 12 Cortex-M3 Debug Monitor Interrupt                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(183): note: previous definition is here
+  DebugMonitor_IRQn           = -4,     /*!< 12 Cortex-M3 Debug Monitor Interrupt                 */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(97): warning: declaration shadows a variable in the global scope [-Wshadow]
+  PendSV_IRQn                 = -2,     /*!< 14 Cortex-M3 Pend SV Interrupt                       */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(184): note: previous declaration is here
+  PendSV_IRQn                 = -2,     /*!< 14 Cortex-M3 Pend SV Interrupt                       */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(97): error: redefinition of enumerator 'PendSV_IRQn'
+  PendSV_IRQn                 = -2,     /*!< 14 Cortex-M3 Pend SV Interrupt                       */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(184): note: previous definition is here
+  PendSV_IRQn                 = -2,     /*!< 14 Cortex-M3 Pend SV Interrupt                       */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(98): warning: declaration shadows a variable in the global scope [-Wshadow]
+  SysTick_IRQn                = -1,     /*!< 15 Cortex-M3 System Tick Interrupt                   */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(185): note: previous declaration is here
+  SysTick_IRQn                = -1,     /*!< 15 Cortex-M3 System Tick Interrupt                   */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(98): error: redefinition of enumerator 'SysTick_IRQn'
+  SysTick_IRQn                = -1,     /*!< 15 Cortex-M3 System Tick Interrupt                   */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(185): note: previous definition is here
+  SysTick_IRQn                = -1,     /*!< 15 Cortex-M3 System Tick Interrupt                   */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(101): warning: declaration shadows a variable in the global scope [-Wshadow]
+  WWDG_IRQn                   = 0,      /*!< Window WatchDog Interrupt                            */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(188): note: previous declaration is here
+  WWDG_IRQn                   = 0,      /*!< Window WatchDog Interrupt                            */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(101): error: redefinition of enumerator 'WWDG_IRQn'
+  WWDG_IRQn                   = 0,      /*!< Window WatchDog Interrupt                            */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(188): note: previous definition is here
+  WWDG_IRQn                   = 0,      /*!< Window WatchDog Interrupt                            */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(102): warning: declaration shadows a variable in the global scope [-Wshadow]
+  PVD_IRQn                    = 1,      /*!< PVD through EXTI Line detection Interrupt            */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(189): note: previous declaration is here
+  PVD_IRQn                    = 1,      /*!< PVD through EXTI Line detection Interrupt            */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(102): error: redefinition of enumerator 'PVD_IRQn'
+  PVD_IRQn                    = 1,      /*!< PVD through EXTI Line detection Interrupt            */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(189): note: previous definition is here
+  PVD_IRQn                    = 1,      /*!< PVD through EXTI Line detection Interrupt            */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(103): warning: declaration shadows a variable in the global scope [-Wshadow]
+  TAMPER_IRQn                 = 2,      /*!< Tamper Interrupt                                     */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(190): note: previous declaration is here
+  TAMPER_IRQn                 = 2,      /*!< Tamper Interrupt                                     */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(103): error: redefinition of enumerator 'TAMPER_IRQn'
+  TAMPER_IRQn                 = 2,      /*!< Tamper Interrupt                                     */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(190): note: previous definition is here
+  TAMPER_IRQn                 = 2,      /*!< Tamper Interrupt                                     */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(104): warning: declaration shadows a variable in the global scope [-Wshadow]
+  RTC_IRQn                    = 3,      /*!< RTC global Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(191): note: previous declaration is here
+  RTC_IRQn                    = 3,      /*!< RTC global Interrupt                                 */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(104): error: redefinition of enumerator 'RTC_IRQn'
+  RTC_IRQn                    = 3,      /*!< RTC global Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(191): note: previous definition is here
+  RTC_IRQn                    = 3,      /*!< RTC global Interrupt                                 */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(105): warning: declaration shadows a variable in the global scope [-Wshadow]
+  FLASH_IRQn                  = 4,      /*!< FLASH global Interrupt                               */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(192): note: previous declaration is here
+  FLASH_IRQn                  = 4,      /*!< FLASH global Interrupt                               */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(105): error: redefinition of enumerator 'FLASH_IRQn'
+  FLASH_IRQn                  = 4,      /*!< FLASH global Interrupt                               */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(192): note: previous definition is here
+  FLASH_IRQn                  = 4,      /*!< FLASH global Interrupt                               */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(106): warning: declaration shadows a variable in the global scope [-Wshadow]
+  RCC_IRQn                    = 5,      /*!< RCC global Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(193): note: previous declaration is here
+  RCC_IRQn                    = 5,      /*!< RCC global Interrupt                                 */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(106): error: redefinition of enumerator 'RCC_IRQn'
+  RCC_IRQn                    = 5,      /*!< RCC global Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(193): note: previous definition is here
+  RCC_IRQn                    = 5,      /*!< RCC global Interrupt                                 */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(107): warning: declaration shadows a variable in the global scope [-Wshadow]
+  EXTI0_IRQn                  = 6,      /*!< EXTI Line0 Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(194): note: previous declaration is here
+  EXTI0_IRQn                  = 6,      /*!< EXTI Line0 Interrupt                                 */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(107): error: redefinition of enumerator 'EXTI0_IRQn'
+  EXTI0_IRQn                  = 6,      /*!< EXTI Line0 Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(194): note: previous definition is here
+  EXTI0_IRQn                  = 6,      /*!< EXTI Line0 Interrupt                                 */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(108): warning: declaration shadows a variable in the global scope [-Wshadow]
+  EXTI1_IRQn                  = 7,      /*!< EXTI Line1 Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(195): note: previous declaration is here
+  EXTI1_IRQn                  = 7,      /*!< EXTI Line1 Interrupt                                 */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(108): error: redefinition of enumerator 'EXTI1_IRQn'
+  EXTI1_IRQn                  = 7,      /*!< EXTI Line1 Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(195): note: previous definition is here
+  EXTI1_IRQn                  = 7,      /*!< EXTI Line1 Interrupt                                 */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(109): warning: declaration shadows a variable in the global scope [-Wshadow]
+  EXTI2_IRQn                  = 8,      /*!< EXTI Line2 Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(196): note: previous declaration is here
+  EXTI2_IRQn                  = 8,      /*!< EXTI Line2 Interrupt                                 */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(109): error: redefinition of enumerator 'EXTI2_IRQn'
+  EXTI2_IRQn                  = 8,      /*!< EXTI Line2 Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(196): note: previous definition is here
+  EXTI2_IRQn                  = 8,      /*!< EXTI Line2 Interrupt                                 */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(110): warning: declaration shadows a variable in the global scope [-Wshadow]
+  EXTI3_IRQn                  = 9,      /*!< EXTI Line3 Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(197): note: previous declaration is here
+  EXTI3_IRQn                  = 9,      /*!< EXTI Line3 Interrupt                                 */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(110): error: redefinition of enumerator 'EXTI3_IRQn'
+  EXTI3_IRQn                  = 9,      /*!< EXTI Line3 Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(197): note: previous definition is here
+  EXTI3_IRQn                  = 9,      /*!< EXTI Line3 Interrupt                                 */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(111): warning: declaration shadows a variable in the global scope [-Wshadow]
+  EXTI4_IRQn                  = 10,     /*!< EXTI Line4 Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(198): note: previous declaration is here
+  EXTI4_IRQn                  = 10,     /*!< EXTI Line4 Interrupt                                 */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(111): error: redefinition of enumerator 'EXTI4_IRQn'
+  EXTI4_IRQn                  = 10,     /*!< EXTI Line4 Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(198): note: previous definition is here
+  EXTI4_IRQn                  = 10,     /*!< EXTI Line4 Interrupt                                 */
+  ^
+../User/timer/timer.c(2): warning: In file included from...
+../User/Led\led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(112): warning: declaration shadows a variable in the global scope [-Wshadow]
+  DMA1_Channel1_IRQn          = 11,     /*!< DMA1 Channel 1 global Interrupt                      */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(199): note: previous declaration is here
+  DMA1_Channel1_IRQn          = 11,     /*!< DMA1 Channel 1 global Interrupt                      */
+  ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+24 warnings and 20 errors generated.
+compiling timer.c...
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(68): warning: '__CM3_REV' macro redefined [-Wmacro-redefined]
+#define __CM3_REV                  0x0200U  /*!< Core Revision r2p0                           */
+        ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(167): note: previous definition is here
+#define __CM3_REV                 0x0200  /*!< Core Revision r2p0                           */
+        ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(69): warning: '__MPU_PRESENT' macro redefined [-Wmacro-redefined]
+ #define __MPU_PRESENT             0U       /*!< Other STM32 devices does not provide an MPU  */
+         ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(165): note: previous definition is here
+ #define __MPU_PRESENT             0      /*!< Other STM32 devices does not provide an MPU  */
+         ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(70): warning: '__NVIC_PRIO_BITS' macro redefined [-Wmacro-redefined]
+#define __NVIC_PRIO_BITS           4U       /*!< STM32 uses 4 Bits for the Priority Levels    */
+        ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(168): note: previous definition is here
+#define __NVIC_PRIO_BITS          4       /*!< STM32 uses 4 Bits for the Priority Levels    */
+        ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(71): warning: '__Vendor_SysTickConfig' macro redefined [-Wmacro-redefined]
+#define __Vendor_SysTickConfig     0U       /*!< Set to 1 if different SysTick Config is used */
+        ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(169): note: previous definition is here
+#define __Vendor_SysTickConfig    0       /*!< Set to 1 if different SysTick Config is used */
+        ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(90): warning: declaration shadows a variable in the global scope [-Wshadow]
+  NonMaskableInt_IRQn         = -14,    /*!< 2 Non Maskable Interrupt                             */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(178): note: previous declaration is here
+  NonMaskableInt_IRQn         = -14,    /*!< 2 Non Maskable Interrupt                             */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(90): error: redefinition of enumerator 'NonMaskableInt_IRQn'
+  NonMaskableInt_IRQn         = -14,    /*!< 2 Non Maskable Interrupt                             */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(178): note: previous definition is here
+  NonMaskableInt_IRQn         = -14,    /*!< 2 Non Maskable Interrupt                             */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(92): warning: declaration shadows a variable in the global scope [-Wshadow]
+  MemoryManagement_IRQn       = -12,    /*!< 4 Cortex-M3 Memory Management Interrupt              */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(179): note: previous declaration is here
+  MemoryManagement_IRQn       = -12,    /*!< 4 Cortex-M3 Memory Management Interrupt              */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(92): error: redefinition of enumerator 'MemoryManagement_IRQn'
+  MemoryManagement_IRQn       = -12,    /*!< 4 Cortex-M3 Memory Management Interrupt              */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(179): note: previous definition is here
+  MemoryManagement_IRQn       = -12,    /*!< 4 Cortex-M3 Memory Management Interrupt              */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(93): warning: declaration shadows a variable in the global scope [-Wshadow]
+  BusFault_IRQn               = -11,    /*!< 5 Cortex-M3 Bus Fault Interrupt                      */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(180): note: previous declaration is here
+  BusFault_IRQn               = -11,    /*!< 5 Cortex-M3 Bus Fault Interrupt                      */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(93): error: redefinition of enumerator 'BusFault_IRQn'
+  BusFault_IRQn               = -11,    /*!< 5 Cortex-M3 Bus Fault Interrupt                      */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(180): note: previous definition is here
+  BusFault_IRQn               = -11,    /*!< 5 Cortex-M3 Bus Fault Interrupt                      */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(94): warning: declaration shadows a variable in the global scope [-Wshadow]
+  UsageFault_IRQn             = -10,    /*!< 6 Cortex-M3 Usage Fault Interrupt                    */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(181): note: previous declaration is here
+  UsageFault_IRQn             = -10,    /*!< 6 Cortex-M3 Usage Fault Interrupt                    */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(94): error: redefinition of enumerator 'UsageFault_IRQn'
+  UsageFault_IRQn             = -10,    /*!< 6 Cortex-M3 Usage Fault Interrupt                    */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(181): note: previous definition is here
+  UsageFault_IRQn             = -10,    /*!< 6 Cortex-M3 Usage Fault Interrupt                    */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(95): warning: declaration shadows a variable in the global scope [-Wshadow]
+  SVCall_IRQn                 = -5,     /*!< 11 Cortex-M3 SV Call Interrupt                       */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(182): note: previous declaration is here
+  SVCall_IRQn                 = -5,     /*!< 11 Cortex-M3 SV Call Interrupt                       */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(95): error: redefinition of enumerator 'SVCall_IRQn'
+  SVCall_IRQn                 = -5,     /*!< 11 Cortex-M3 SV Call Interrupt                       */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(182): note: previous definition is here
+  SVCall_IRQn                 = -5,     /*!< 11 Cortex-M3 SV Call Interrupt                       */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(96): warning: declaration shadows a variable in the global scope [-Wshadow]
+  DebugMonitor_IRQn           = -4,     /*!< 12 Cortex-M3 Debug Monitor Interrupt                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(183): note: previous declaration is here
+  DebugMonitor_IRQn           = -4,     /*!< 12 Cortex-M3 Debug Monitor Interrupt                 */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(96): error: redefinition of enumerator 'DebugMonitor_IRQn'
+  DebugMonitor_IRQn           = -4,     /*!< 12 Cortex-M3 Debug Monitor Interrupt                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(183): note: previous definition is here
+  DebugMonitor_IRQn           = -4,     /*!< 12 Cortex-M3 Debug Monitor Interrupt                 */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(97): warning: declaration shadows a variable in the global scope [-Wshadow]
+  PendSV_IRQn                 = -2,     /*!< 14 Cortex-M3 Pend SV Interrupt                       */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(184): note: previous declaration is here
+  PendSV_IRQn                 = -2,     /*!< 14 Cortex-M3 Pend SV Interrupt                       */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(97): error: redefinition of enumerator 'PendSV_IRQn'
+  PendSV_IRQn                 = -2,     /*!< 14 Cortex-M3 Pend SV Interrupt                       */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(184): note: previous definition is here
+  PendSV_IRQn                 = -2,     /*!< 14 Cortex-M3 Pend SV Interrupt                       */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(98): warning: declaration shadows a variable in the global scope [-Wshadow]
+  SysTick_IRQn                = -1,     /*!< 15 Cortex-M3 System Tick Interrupt                   */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(185): note: previous declaration is here
+  SysTick_IRQn                = -1,     /*!< 15 Cortex-M3 System Tick Interrupt                   */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(98): error: redefinition of enumerator 'SysTick_IRQn'
+  SysTick_IRQn                = -1,     /*!< 15 Cortex-M3 System Tick Interrupt                   */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(185): note: previous definition is here
+  SysTick_IRQn                = -1,     /*!< 15 Cortex-M3 System Tick Interrupt                   */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(101): warning: declaration shadows a variable in the global scope [-Wshadow]
+  WWDG_IRQn                   = 0,      /*!< Window WatchDog Interrupt                            */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(188): note: previous declaration is here
+  WWDG_IRQn                   = 0,      /*!< Window WatchDog Interrupt                            */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(101): error: redefinition of enumerator 'WWDG_IRQn'
+  WWDG_IRQn                   = 0,      /*!< Window WatchDog Interrupt                            */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(188): note: previous definition is here
+  WWDG_IRQn                   = 0,      /*!< Window WatchDog Interrupt                            */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(102): warning: declaration shadows a variable in the global scope [-Wshadow]
+  PVD_IRQn                    = 1,      /*!< PVD through EXTI Line detection Interrupt            */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(189): note: previous declaration is here
+  PVD_IRQn                    = 1,      /*!< PVD through EXTI Line detection Interrupt            */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(102): error: redefinition of enumerator 'PVD_IRQn'
+  PVD_IRQn                    = 1,      /*!< PVD through EXTI Line detection Interrupt            */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(189): note: previous definition is here
+  PVD_IRQn                    = 1,      /*!< PVD through EXTI Line detection Interrupt            */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(103): warning: declaration shadows a variable in the global scope [-Wshadow]
+  TAMPER_IRQn                 = 2,      /*!< Tamper Interrupt                                     */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(190): note: previous declaration is here
+  TAMPER_IRQn                 = 2,      /*!< Tamper Interrupt                                     */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(103): error: redefinition of enumerator 'TAMPER_IRQn'
+  TAMPER_IRQn                 = 2,      /*!< Tamper Interrupt                                     */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(190): note: previous definition is here
+  TAMPER_IRQn                 = 2,      /*!< Tamper Interrupt                                     */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(104): warning: declaration shadows a variable in the global scope [-Wshadow]
+  RTC_IRQn                    = 3,      /*!< RTC global Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(191): note: previous declaration is here
+  RTC_IRQn                    = 3,      /*!< RTC global Interrupt                                 */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(104): error: redefinition of enumerator 'RTC_IRQn'
+  RTC_IRQn                    = 3,      /*!< RTC global Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(191): note: previous definition is here
+  RTC_IRQn                    = 3,      /*!< RTC global Interrupt                                 */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(105): warning: declaration shadows a variable in the global scope [-Wshadow]
+  FLASH_IRQn                  = 4,      /*!< FLASH global Interrupt                               */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(192): note: previous declaration is here
+  FLASH_IRQn                  = 4,      /*!< FLASH global Interrupt                               */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(105): error: redefinition of enumerator 'FLASH_IRQn'
+  FLASH_IRQn                  = 4,      /*!< FLASH global Interrupt                               */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(192): note: previous definition is here
+  FLASH_IRQn                  = 4,      /*!< FLASH global Interrupt                               */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(106): warning: declaration shadows a variable in the global scope [-Wshadow]
+  RCC_IRQn                    = 5,      /*!< RCC global Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(193): note: previous declaration is here
+  RCC_IRQn                    = 5,      /*!< RCC global Interrupt                                 */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(106): error: redefinition of enumerator 'RCC_IRQn'
+  RCC_IRQn                    = 5,      /*!< RCC global Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(193): note: previous definition is here
+  RCC_IRQn                    = 5,      /*!< RCC global Interrupt                                 */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(107): warning: declaration shadows a variable in the global scope [-Wshadow]
+  EXTI0_IRQn                  = 6,      /*!< EXTI Line0 Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(194): note: previous declaration is here
+  EXTI0_IRQn                  = 6,      /*!< EXTI Line0 Interrupt                                 */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(107): error: redefinition of enumerator 'EXTI0_IRQn'
+  EXTI0_IRQn                  = 6,      /*!< EXTI Line0 Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(194): note: previous definition is here
+  EXTI0_IRQn                  = 6,      /*!< EXTI Line0 Interrupt                                 */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(108): warning: declaration shadows a variable in the global scope [-Wshadow]
+  EXTI1_IRQn                  = 7,      /*!< EXTI Line1 Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(195): note: previous declaration is here
+  EXTI1_IRQn                  = 7,      /*!< EXTI Line1 Interrupt                                 */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(108): error: redefinition of enumerator 'EXTI1_IRQn'
+  EXTI1_IRQn                  = 7,      /*!< EXTI Line1 Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(195): note: previous definition is here
+  EXTI1_IRQn                  = 7,      /*!< EXTI Line1 Interrupt                                 */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(109): warning: declaration shadows a variable in the global scope [-Wshadow]
+  EXTI2_IRQn                  = 8,      /*!< EXTI Line2 Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(196): note: previous declaration is here
+  EXTI2_IRQn                  = 8,      /*!< EXTI Line2 Interrupt                                 */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(109): error: redefinition of enumerator 'EXTI2_IRQn'
+  EXTI2_IRQn                  = 8,      /*!< EXTI Line2 Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(196): note: previous definition is here
+  EXTI2_IRQn                  = 8,      /*!< EXTI Line2 Interrupt                                 */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(110): warning: declaration shadows a variable in the global scope [-Wshadow]
+  EXTI3_IRQn                  = 9,      /*!< EXTI Line3 Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(197): note: previous declaration is here
+  EXTI3_IRQn                  = 9,      /*!< EXTI Line3 Interrupt                                 */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(110): error: redefinition of enumerator 'EXTI3_IRQn'
+  EXTI3_IRQn                  = 9,      /*!< EXTI Line3 Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(197): note: previous definition is here
+  EXTI3_IRQn                  = 9,      /*!< EXTI Line3 Interrupt                                 */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(111): warning: declaration shadows a variable in the global scope [-Wshadow]
+  EXTI4_IRQn                  = 10,     /*!< EXTI Line4 Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(198): note: previous declaration is here
+  EXTI4_IRQn                  = 10,     /*!< EXTI Line4 Interrupt                                 */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(111): error: redefinition of enumerator 'EXTI4_IRQn'
+  EXTI4_IRQn                  = 10,     /*!< EXTI Line4 Interrupt                                 */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(198): note: previous definition is here
+  EXTI4_IRQn                  = 10,     /*!< EXTI Line4 Interrupt                                 */
+  ^
+../User/Key/key.c(2): warning: In file included from...
+../User/Key/key.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(151): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(112): warning: declaration shadows a variable in the global scope [-Wshadow]
+  DMA1_Channel1_IRQn          = 11,     /*!< DMA1 Channel 1 global Interrupt                      */
+  ^
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(199): note: previous declaration is here
+  DMA1_Channel1_IRQn          = 11,     /*!< DMA1 Channel 1 global Interrupt                      */
+  ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+24 warnings and 20 errors generated.
+compiling key.c...
+../User/main.c(1): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(218): warning: In file included from...
+../Library/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal.h(48): warning: In file included from...
+../User\stm32f1xx_hal_conf.h(348): warning: In file included from...
+../Library/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_pcd.h(52): warning: In file included from...
+../Library/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h(275): warning: padding struct 'USB_EPTypeDef' with 1 byte to align 'tx_fifo_num' [-Wpadded]
+  uint16_t  tx_fifo_num;    /*!< This parameter is not required by USB Device FS peripheral, it is used 
+            ^
+../Library/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h(279): warning: padding struct 'USB_EPTypeDef' with 2 bytes to align 'maxpacket' [-Wpadded]
+  uint32_t  maxpacket;      /*!< Endpoint Max packet size
+            ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(165): warning: '__MPU_PRESENT' macro redefined [-Wmacro-redefined]
+ #define __MPU_PRESENT             0      /*!< Other STM32 devices does not provide an MPU  */
+         ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(69): note: previous definition is here
+ #define __MPU_PRESENT             0U       /*!< Other STM32 devices does not provide an MPU  */
+         ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(167): warning: '__CM3_REV' macro redefined [-Wmacro-redefined]
+#define __CM3_REV                 0x0200  /*!< Core Revision r2p0                           */
+        ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(68): note: previous definition is here
+#define __CM3_REV                  0x0200U  /*!< Core Revision r2p0                           */
+        ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(168): warning: '__NVIC_PRIO_BITS' macro redefined [-Wmacro-redefined]
+#define __NVIC_PRIO_BITS          4       /*!< STM32 uses 4 Bits for the Priority Levels    */
+        ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(70): note: previous definition is here
+#define __NVIC_PRIO_BITS           4U       /*!< STM32 uses 4 Bits for the Priority Levels    */
+        ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(169): warning: '__Vendor_SysTickConfig' macro redefined [-Wmacro-redefined]
+#define __Vendor_SysTickConfig    0       /*!< Set to 1 if different SysTick Config is used */
+        ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(71): note: previous definition is here
+#define __Vendor_SysTickConfig     0U       /*!< Set to 1 if different SysTick Config is used */
+        ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(178): warning: declaration shadows a variable in the global scope [-Wshadow]
+  NonMaskableInt_IRQn         = -14,    /*!< 2 Non Maskable Interrupt                             */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(90): note: previous declaration is here
+  NonMaskableInt_IRQn         = -14,    /*!< 2 Non Maskable Interrupt                             */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(178): error: redefinition of enumerator 'NonMaskableInt_IRQn'
+  NonMaskableInt_IRQn         = -14,    /*!< 2 Non Maskable Interrupt                             */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(90): note: previous definition is here
+  NonMaskableInt_IRQn         = -14,    /*!< 2 Non Maskable Interrupt                             */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(179): warning: declaration shadows a variable in the global scope [-Wshadow]
+  MemoryManagement_IRQn       = -12,    /*!< 4 Cortex-M3 Memory Management Interrupt              */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(92): note: previous declaration is here
+  MemoryManagement_IRQn       = -12,    /*!< 4 Cortex-M3 Memory Management Interrupt              */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(179): error: redefinition of enumerator 'MemoryManagement_IRQn'
+  MemoryManagement_IRQn       = -12,    /*!< 4 Cortex-M3 Memory Management Interrupt              */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(92): note: previous definition is here
+  MemoryManagement_IRQn       = -12,    /*!< 4 Cortex-M3 Memory Management Interrupt              */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(180): warning: declaration shadows a variable in the global scope [-Wshadow]
+  BusFault_IRQn               = -11,    /*!< 5 Cortex-M3 Bus Fault Interrupt                      */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(93): note: previous declaration is here
+  BusFault_IRQn               = -11,    /*!< 5 Cortex-M3 Bus Fault Interrupt                      */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(180): error: redefinition of enumerator 'BusFault_IRQn'
+  BusFault_IRQn               = -11,    /*!< 5 Cortex-M3 Bus Fault Interrupt                      */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(93): note: previous definition is here
+  BusFault_IRQn               = -11,    /*!< 5 Cortex-M3 Bus Fault Interrupt                      */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(181): warning: declaration shadows a variable in the global scope [-Wshadow]
+  UsageFault_IRQn             = -10,    /*!< 6 Cortex-M3 Usage Fault Interrupt                    */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(94): note: previous declaration is here
+  UsageFault_IRQn             = -10,    /*!< 6 Cortex-M3 Usage Fault Interrupt                    */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(181): error: redefinition of enumerator 'UsageFault_IRQn'
+  UsageFault_IRQn             = -10,    /*!< 6 Cortex-M3 Usage Fault Interrupt                    */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(94): note: previous definition is here
+  UsageFault_IRQn             = -10,    /*!< 6 Cortex-M3 Usage Fault Interrupt                    */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(182): warning: declaration shadows a variable in the global scope [-Wshadow]
+  SVCall_IRQn                 = -5,     /*!< 11 Cortex-M3 SV Call Interrupt                       */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(95): note: previous declaration is here
+  SVCall_IRQn                 = -5,     /*!< 11 Cortex-M3 SV Call Interrupt                       */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(182): error: redefinition of enumerator 'SVCall_IRQn'
+  SVCall_IRQn                 = -5,     /*!< 11 Cortex-M3 SV Call Interrupt                       */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(95): note: previous definition is here
+  SVCall_IRQn                 = -5,     /*!< 11 Cortex-M3 SV Call Interrupt                       */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(183): warning: declaration shadows a variable in the global scope [-Wshadow]
+  DebugMonitor_IRQn           = -4,     /*!< 12 Cortex-M3 Debug Monitor Interrupt                 */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(96): note: previous declaration is here
+  DebugMonitor_IRQn           = -4,     /*!< 12 Cortex-M3 Debug Monitor Interrupt                 */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(183): error: redefinition of enumerator 'DebugMonitor_IRQn'
+  DebugMonitor_IRQn           = -4,     /*!< 12 Cortex-M3 Debug Monitor Interrupt                 */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(96): note: previous definition is here
+  DebugMonitor_IRQn           = -4,     /*!< 12 Cortex-M3 Debug Monitor Interrupt                 */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(184): warning: declaration shadows a variable in the global scope [-Wshadow]
+  PendSV_IRQn                 = -2,     /*!< 14 Cortex-M3 Pend SV Interrupt                       */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(97): note: previous declaration is here
+  PendSV_IRQn                 = -2,     /*!< 14 Cortex-M3 Pend SV Interrupt                       */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(184): error: redefinition of enumerator 'PendSV_IRQn'
+  PendSV_IRQn                 = -2,     /*!< 14 Cortex-M3 Pend SV Interrupt                       */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(97): note: previous definition is here
+  PendSV_IRQn                 = -2,     /*!< 14 Cortex-M3 Pend SV Interrupt                       */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(185): warning: declaration shadows a variable in the global scope [-Wshadow]
+  SysTick_IRQn                = -1,     /*!< 15 Cortex-M3 System Tick Interrupt                   */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(98): note: previous declaration is here
+  SysTick_IRQn                = -1,     /*!< 15 Cortex-M3 System Tick Interrupt                   */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(185): error: redefinition of enumerator 'SysTick_IRQn'
+  SysTick_IRQn                = -1,     /*!< 15 Cortex-M3 System Tick Interrupt                   */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(98): note: previous definition is here
+  SysTick_IRQn                = -1,     /*!< 15 Cortex-M3 System Tick Interrupt                   */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(188): warning: declaration shadows a variable in the global scope [-Wshadow]
+  WWDG_IRQn                   = 0,      /*!< Window WatchDog Interrupt                            */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(101): note: previous declaration is here
+  WWDG_IRQn                   = 0,      /*!< Window WatchDog Interrupt                            */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(188): error: redefinition of enumerator 'WWDG_IRQn'
+  WWDG_IRQn                   = 0,      /*!< Window WatchDog Interrupt                            */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(101): note: previous definition is here
+  WWDG_IRQn                   = 0,      /*!< Window WatchDog Interrupt                            */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(189): warning: declaration shadows a variable in the global scope [-Wshadow]
+  PVD_IRQn                    = 1,      /*!< PVD through EXTI Line detection Interrupt            */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(102): note: previous declaration is here
+  PVD_IRQn                    = 1,      /*!< PVD through EXTI Line detection Interrupt            */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(189): error: redefinition of enumerator 'PVD_IRQn'
+  PVD_IRQn                    = 1,      /*!< PVD through EXTI Line detection Interrupt            */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(102): note: previous definition is here
+  PVD_IRQn                    = 1,      /*!< PVD through EXTI Line detection Interrupt            */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(190): warning: declaration shadows a variable in the global scope [-Wshadow]
+  TAMPER_IRQn                 = 2,      /*!< Tamper Interrupt                                     */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(103): note: previous declaration is here
+  TAMPER_IRQn                 = 2,      /*!< Tamper Interrupt                                     */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(190): error: redefinition of enumerator 'TAMPER_IRQn'
+  TAMPER_IRQn                 = 2,      /*!< Tamper Interrupt                                     */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(103): note: previous definition is here
+  TAMPER_IRQn                 = 2,      /*!< Tamper Interrupt                                     */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(191): warning: declaration shadows a variable in the global scope [-Wshadow]
+  RTC_IRQn                    = 3,      /*!< RTC global Interrupt                                 */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(104): note: previous declaration is here
+  RTC_IRQn                    = 3,      /*!< RTC global Interrupt                                 */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(191): error: redefinition of enumerator 'RTC_IRQn'
+  RTC_IRQn                    = 3,      /*!< RTC global Interrupt                                 */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(104): note: previous definition is here
+  RTC_IRQn                    = 3,      /*!< RTC global Interrupt                                 */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(192): warning: declaration shadows a variable in the global scope [-Wshadow]
+  FLASH_IRQn                  = 4,      /*!< FLASH global Interrupt                               */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(105): note: previous declaration is here
+  FLASH_IRQn                  = 4,      /*!< FLASH global Interrupt                               */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(192): error: redefinition of enumerator 'FLASH_IRQn'
+  FLASH_IRQn                  = 4,      /*!< FLASH global Interrupt                               */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(105): note: previous definition is here
+  FLASH_IRQn                  = 4,      /*!< FLASH global Interrupt                               */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(193): warning: declaration shadows a variable in the global scope [-Wshadow]
+  RCC_IRQn                    = 5,      /*!< RCC global Interrupt                                 */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(106): note: previous declaration is here
+  RCC_IRQn                    = 5,      /*!< RCC global Interrupt                                 */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(193): error: redefinition of enumerator 'RCC_IRQn'
+  RCC_IRQn                    = 5,      /*!< RCC global Interrupt                                 */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(106): note: previous definition is here
+  RCC_IRQn                    = 5,      /*!< RCC global Interrupt                                 */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(194): warning: declaration shadows a variable in the global scope [-Wshadow]
+  EXTI0_IRQn                  = 6,      /*!< EXTI Line0 Interrupt                                 */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(107): note: previous declaration is here
+  EXTI0_IRQn                  = 6,      /*!< EXTI Line0 Interrupt                                 */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(194): error: redefinition of enumerator 'EXTI0_IRQn'
+  EXTI0_IRQn                  = 6,      /*!< EXTI Line0 Interrupt                                 */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(107): note: previous definition is here
+  EXTI0_IRQn                  = 6,      /*!< EXTI Line0 Interrupt                                 */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(195): warning: declaration shadows a variable in the global scope [-Wshadow]
+  EXTI1_IRQn                  = 7,      /*!< EXTI Line1 Interrupt                                 */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(108): note: previous declaration is here
+  EXTI1_IRQn                  = 7,      /*!< EXTI Line1 Interrupt                                 */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(195): error: redefinition of enumerator 'EXTI1_IRQn'
+  EXTI1_IRQn                  = 7,      /*!< EXTI Line1 Interrupt                                 */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(108): note: previous definition is here
+  EXTI1_IRQn                  = 7,      /*!< EXTI Line1 Interrupt                                 */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(196): warning: declaration shadows a variable in the global scope [-Wshadow]
+  EXTI2_IRQn                  = 8,      /*!< EXTI Line2 Interrupt                                 */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(109): note: previous declaration is here
+  EXTI2_IRQn                  = 8,      /*!< EXTI Line2 Interrupt                                 */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(196): error: redefinition of enumerator 'EXTI2_IRQn'
+  EXTI2_IRQn                  = 8,      /*!< EXTI Line2 Interrupt                                 */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(109): note: previous definition is here
+  EXTI2_IRQn                  = 8,      /*!< EXTI Line2 Interrupt                                 */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(197): warning: declaration shadows a variable in the global scope [-Wshadow]
+  EXTI3_IRQn                  = 9,      /*!< EXTI Line3 Interrupt                                 */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(110): note: previous declaration is here
+  EXTI3_IRQn                  = 9,      /*!< EXTI Line3 Interrupt                                 */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(197): error: redefinition of enumerator 'EXTI3_IRQn'
+  EXTI3_IRQn                  = 9,      /*!< EXTI Line3 Interrupt                                 */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(110): note: previous definition is here
+  EXTI3_IRQn                  = 9,      /*!< EXTI Line3 Interrupt                                 */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(198): warning: declaration shadows a variable in the global scope [-Wshadow]
+  EXTI4_IRQn                  = 10,     /*!< EXTI Line4 Interrupt                                 */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(111): note: previous declaration is here
+  EXTI4_IRQn                  = 10,     /*!< EXTI Line4 Interrupt                                 */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(198): error: redefinition of enumerator 'EXTI4_IRQn'
+  EXTI4_IRQn                  = 10,     /*!< EXTI Line4 Interrupt                                 */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(111): note: previous definition is here
+  EXTI4_IRQn                  = 10,     /*!< EXTI Line4 Interrupt                                 */
+  ^
+../User/main.c(4): warning: In file included from...
+../User/system\sys.h(3): warning: In file included from...
+C:/Users/LENOVO/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.0/Device/Include\stm32f10x.h(199): warning: declaration shadows a variable in the global scope [-Wshadow]
+  DMA1_Channel1_IRQn          = 11,     /*!< DMA1 Channel 1 global Interrupt                      */
+  ^
+../Library/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h(112): note: previous declaration is here
+  DMA1_Channel1_IRQn          = 11,     /*!< DMA1 Channel 1 global Interrupt                      */
+  ^
+fatal error: too many errors emitted, stopping now [-ferror-limit=]
+26 warnings and 20 errors generated.
+compiling main.c...
+../User/Led/led.c(1): warning: In file included from...
+../User/Led/led.h(4): warning: In file included from...
+../Library/CMSIS/Device/ST/STM32F1xx/Include\stm32f1xx.h(218): warning: In file included from...
+../Library/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal.h(48): warning: In file included from...
+../User\stm32f1xx_hal_conf.h(348): warning: In file included from...
+../Library/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_pcd.h(52): warning: In file included from...
+../Library/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h(275): warning: padding struct 'USB_EPTypeDef' with 1 byte to align 'tx_fifo_num' [-Wpadded]
+  uint16_t  tx_fifo_num;    /*!< This parameter is not required by USB Device FS peripheral, it is used 
+            ^
+../Library/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h(279): warning: padding struct 'USB_EPTypeDef' with 2 bytes to align 'maxpacket' [-Wpadded]
+  uint32_t  maxpacket;      /*!< Endpoint Max packet size
+            ^
+../User/Led/led.c(11): warning: implicit declaration of function 'RCC_APB2PeriphClockCmd' is invalid in C99 [-Wimplicit-function-declaration]
+        RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB|RCC_APB2Periph_AFIO, ENABLE); 
+        ^
+../User/Led/led.c(11): error: use of undeclared identifier 'RCC_APB2Periph_GPIOB'
+        RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB|RCC_APB2Periph_AFIO, ENABLE); 
+                               ^
+../User/Led/led.c(11): error: use of undeclared identifier 'RCC_APB2Periph_AFIO'
+        RCC_APB2PeriphClockCmd(RCC_APB2Periph_GPIOB|RCC_APB2Periph_AFIO, ENABLE); 
+                                                    ^
+../User/Led/led.c(13): warning: implicit declaration of function 'GPIO_PinRemapConfig' is invalid in C99 [-Wimplicit-function-declaration]
+        GPIO_PinRemapConfig(GPIO_PartialRemap_TIM3, ENABLE); 
+        ^
+../User/Led/led.c(13): error: use of undeclared identifier 'GPIO_PartialRemap_TIM3'
+        GPIO_PinRemapConfig(GPIO_PartialRemap_TIM3, ENABLE); 
+                            ^
+../User/Led/led.c(16): error: no member named 'GPIO_Pin' in 'GPIO_InitTypeDef'
+        GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_5 ;     
+        ~~~~~~~~~~~~~~~~~~ ^
+../User/Led/led.c(16): error: use of undeclared identifier 'GPIO_Pin_5'
+        GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_5 ;     
+                                       ^
+../User/Led/led.c(17): error: no member named 'GPIO_Mode' in 'GPIO_InitTypeDef'
+        GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;             // <B8><B4><D3><C3><CD><C6><CD><EC><CA><E4><B3><F6>
+        ~~~~~~~~~~~~~~~~~~ ^
+../User/Led/led.c(17): error: use of undeclared identifier 'GPIO_Mode_AF_PP'
+        GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF_PP;             // <B8><B4><D3><C3><CD><C6><CD><EC><CA><E4><B3><F6>
+                                       ^
+../User/Led/led.c(18): error: no member named 'GPIO_Speed' in 'GPIO_InitTypeDef'
+        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+        ~~~~~~~~~~~~~~~~~~ ^
+../User/Led/led.c(18): error: use of undeclared identifier 'GPIO_Speed_50MHz'
+        GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
+                                        ^
+../User/Led/led.c(19): warning: implicit declaration of function 'GPIO_Init' is invalid in C99 [-Wimplicit-function-declaration]
+        GPIO_Init(GPIOB, &GPIO_InitStructure);
+        ^
+../User/Led/led.c(21): error: no member named 'GPIO_Pin' in 'GPIO_InitTypeDef'
+        GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_0 ;
+        ~~~~~~~~~~~~~~~~~~ ^
+../User/Led/led.c(21): error: use of undeclared identifier 'GPIO_Pin_0'; did you mean 'GPIO_Init'?
+        GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_0 ;
+                                       ^~~~~~~~~~
+                                       GPIO_Init
+../User/Led/led.c(19): note: 'GPIO_Init' declared here
+        GPIO_Init(GPIOB, &GPIO_InitStructure);
+        ^
+../User/Led/led.c(24): error: no member named 'GPIO_Pin' in 'GPIO_InitTypeDef'
+        GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_1 ;
+        ~~~~~~~~~~~~~~~~~~ ^
+../User/Led/led.c(24): error: use of undeclared identifier 'GPIO_Pin_1'; did you mean 'GPIO_Init'?
+        GPIO_InitStructure.GPIO_Pin =  GPIO_Pin_1 ;
+                                       ^~~~~~~~~~
+                                       GPIO_Init
+../User/Led/led.c(19): note: 'GPIO_Init' declared here
+        GPIO_Init(GPIOB, &GPIO_InitStructure);
+        ^
+../User/Led/led.c(7): warning: no previous prototype for function 'LED_Init' [-Wmissing-prototypes]
+void LED_Init(void) 
+     ^
+../User/Led/led.c(7): note: declare 'static' if the function is not intended to be used outside of this translation unit
+void LED_Init(void) 
+^
+static 
+6 warnings and 13 errors generated.
+compiling led.c...
+"..\Output\CourseTask.axf" - 93 Error(s), 89 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.STM32F1xx_DFP.2.4.0.pack
+                Keil.STM32F1xx_DFP.2.4.0
+                STMicroelectronics STM32F1 Series Device Support, Drivers and Examples
+
+<h2>Collection of Component include folders:</h2>
+  C:\Users\LENOVO\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.0\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+Target not created.
+Build Time Elapsed:  00:00:09
+</pre>
+</body>
+</html>
